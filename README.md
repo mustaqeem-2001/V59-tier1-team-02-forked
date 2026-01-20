@@ -38,8 +38,8 @@ coding!
 - Teammate Michael #2: [GitHub](https://github.com/djzsmk) / [LinkedIn](https://www.linkedin.com/in/michaeljamesdevolper/)
 - Teammate Mustaqeem #3: [GitHub](https://github.com/mustaqeem-2001) / [LinkedIn](https://www.linkedin.com/in/mustaqeem-c-3a3875208/)
 - Teammate Furtuna #4: [GitHub](https://github.com/Furtuna11) / [LinkedIn](https://www.linkedin.com/in/furtuna-hab/)
-- Teammate Maryann #5:
-- Teammate Jenardo #6:
+- Teammate Maryann #5: [GitHub](https://github.com/mary1na-code) / [LinkedIn](https://www.linkedin.com/in/maryann-igwe-oruta-374309318)
+- Teammate Jenardo #6: [GitHub](https://github.com/Jzitam) / [LinkedIn](https://www.linkedin.com/in/jenardo-walker)
 
    ...
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
