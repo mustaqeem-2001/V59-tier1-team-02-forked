@@ -27,40 +27,37 @@ export default function Questions() {
     flashcardQuestions.flashcards[0].id
   );
 
+  const currentQuestion = flashcardQuestions.flashcards.find(function(card) {
+    return card.id === currentQuestionId;
+  })
 
-
-  // const htmlOutput = flashcardQuestions.flashcards.map(function(card) {
-  //   return `
-  //     <div>
-  //           <section class="question-title">${card.question}</section>
-  //           <section class="question-choices">
-  //           <div>${card.options.A}</div>
-  //           <div>${card.options.B}</div>
-  //           <div>${card.options.C}</div>
-  //           <div>${card.options.D}</div>
-  //           </section>
-  //     </div>
-  //   `
-  // }).join("");
-  let key = 0;
+  console.log(currentQuestion);
   return (
     <>
       <h1>Questions Page</h1>
       <section className="question-section">
-          {flashcardQuestions.flashcards[key].map(function(card) {
-            return (
-              <div>
-                    <section class="question-title">{card.question}</section>
-                    <section class="question-choices">
-                    <div>{card.options.A}</div>
-                    <div>{card.options.B}</div>
-                    <div>{card.options.C}</div>
-                    <div>{card.options.D}</div>
-                    </section>
-              </div>
-            )
-          })}
+        <div>
+              <section className="question-title">{currentQuestion.question}</section>
+              <section className="question-choices">
+              <div>{currentQuestion.options.A}</div>
+              <div>{currentQuestion.options.B}</div>
+              <div>{currentQuestion.options.C}</div>
+              <div>{currentQuestion.options.D}</div>
+              </section>
+        </div>
       </section>
+      <button type="submit"
+        onClick={function () {
+          const nextQuestion = flashcardQuestions.flashcards[currentQuestionId + 1];
+          if (nextQuestion) {
+            setCurrentQuestionId(nextQuestion.id);
+            console.log(nextQuestion);
+          }
+
+        }}
+      >
+        Next
+      </button>
     </>
   );
 }
