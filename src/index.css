@@ -1,5 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 🎨 Colors */
+  --color-primary: #2563EB;   /* Blue */
+  --color-secondary: #B3C8F8; /* Light blue */
+  --color-background: #FEFFFF;
+  --color-text: #4B4B4B;
+
+  /* 🖋 Typography */
+  --font-body: "Nunito Sans", sans-serif;
+  --font-heading: "Edu SA Beginner", cursive;
+
+  /* 📏 Responsive Font Sizes (1rem = 10px baseline) */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.5vw, 0.875rem); /* 7.5px → 8.75px */
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.5vw, 1rem);    /* 8.75px → 10px */
+  --font-size-md: clamp(1rem, 0.9rem + 0.8vw, 1.125rem);    /* 10px → 11.25px */
+  --font-size-lg: clamp(1.25rem, 1.1rem + 1vw, 1.5rem);     /* 12.5px → 15px */
+  --font-size-xl: clamp(1.5rem, 1.3rem + 1.2vw, 2rem);      /* 15px → 20px */
+  --font-size-2xl: clamp(2rem, 1.7rem + 1.5vw, 3rem);       /* 20px → 30px */
+  --font-size-3xl: clamp(2.5rem, 2rem + 2vw, 4rem);         /* 25px → 40px */
+
+  /* 🔤 Heading Styles (size + weight) */
+  --h1-size: clamp(3.6rem, 3rem + 2vw, 5.4rem); /* up to 54px */
+  --h1-weight: 700;
+  --h2-size: clamp(2.8rem, 2.4rem + 1.5vw, 4.2rem); /* up to 42px */
+  --h2-weight: 600;
+  --h3-size: clamp(2.2rem, 2rem + 1vw, 3.2rem); /* up to 32px */
+  --h3-weight: 600;
+  --h4-size: clamp(1.8rem, 1.6rem + 0.8vw, 2.4rem); /* up to 24px */
+  --h4-weight: 500;
+  --p-size: clamp(1.2rem, 1rem + 0.5vw, 1.6rem);
+  --p-weight: 500;
+
+
+  /* 📐 Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: clamp(1.2rem, 2vw, 2.5rem);
+  --space-xl: 4rem;
+  --margin-inline-base: clamp(1rem, 5vw, 3rem);
+  --margin-block-base: clamp(1rem, 5vh, 3rem); /* ✅ added for body margins */
+
+  /* 🟦 Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* 🌗 Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.15);
+
+  /* 📱 Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: var(--font-body);
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px baseline */
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-inline: var(--margin-inline-base);
+  margin-block: var(--margin-block-base);
+  font-size: var(--p-size);
+  font-weight: var(--p-weight);
+}
+    
+p {
+  font-size: var(--p-size);
+  font-weight: var(--p-weight);
+}
+
+/* Heading elements styled with tokens */
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: 1.3;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  line-height: 1.4;
+}
+
+h4 {
+  font-family: var(--font-heading);
+  font-size: var(--h4-size);
+  font-weight: var(--h4-weight);
+  line-height: 1.5;
+}
+
+nav {
+  margin-block: var(--space-lg);
+}
+
+nav a {
+  color: var(--color-text);
+  transition: color 0.3s ease;
+  font-size: var(--p-size);
+  font-weight: 600;
+  padding: var(--space-sm);
+  margin: var(--space-sm);
 }

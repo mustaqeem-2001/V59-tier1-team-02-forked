@@ -4,19 +4,6 @@ import Footer from "../components/Footer.jsx";
 
 export default function Home() {
     return <>
-        <header>        
-            {/* Import Header here */}
-        </header>
-
-        <h1>Home Page</h1>
-        <br/>
-        <Link to="/roles">Roles Page</Link>
-        <br/>
-        <Link to="/questions">Questions Page</Link>
-        
-        <footer>
-            {/* Import Footer here */}
-        </footer>
 
     </>
 }
