@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Questions() {
-//change 2
+  //change 2
   const navigate = useNavigate();
 
   const { roleId } = useParams();
@@ -35,56 +35,59 @@ export default function Questions() {
   //not needed. can delete
   const [finished, setFinished] = useState(false);
 
-  useEffect(function () {
-    setCurrentIndex(0);
-  }, [roleId]);
+  useEffect(
+    function () {
+      setCurrentIndex(0);
+    },
+    [roleId],
+  );
 
   const currentQuestion = flashcards[currentIndex];
 
   //change 3
-function finish() {
-  navigate('/results', {
-    state: { 
-      score: 5, 
-      totalQuestions: flashcards.length 
-    },
-    replace: true
-  });
-}
-//change 4
-  function clickHandler() {
-  if (currentIndex < flashcards.length - 1) {
-    setCurrentIndex(currentIndex + 1);
-  } else {
-    finish(); 
+  function finish() {
+    navigate("/results", {
+      state: {
+        score: 5,
+        totalQuestions: flashcards.length, //may add replace: true later
+        roleId: roleId,
+      },
+    });
   }
-}
+  //change 4
+  function clickHandler() {
+    if (currentIndex < flashcards.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    } else {
+      finish();
+    }
+  }
 
   return (
     <>
       <h1>{roleLabel} Questions</h1>
 
-      
-        <section className="question-section">
-          <div>
-            <section className="question-title">
-              Question {currentIndex + 1}: {flashcards[currentIndex].question}
-            </section>
-            <section className="question-choices">
-              <div>A: {flashcards[currentIndex].options.A}</div>
-              <div>B: {flashcards[currentIndex].options.B}</div>
-              <div>C: {flashcards[currentIndex].options.C}</div>
-              <div>D: {flashcards[currentIndex].options.D}</div>
-            </section>
-          </div>
-          {
-            //change 5
-          }
-          <button onClick={clickHandler}>
-  {currentIndex === flashcards.length - 1 ? "Finish & Show Results" : "Next"}
-</button>
-        </section>
-      
+      <section className="question-section">
+        <div>
+          <section className="question-title">
+            Question {currentIndex + 1}: {flashcards[currentIndex].question}
+          </section>
+          <section className="question-choices">
+            <div>A: {flashcards[currentIndex].options.A}</div>
+            <div>B: {flashcards[currentIndex].options.B}</div>
+            <div>C: {flashcards[currentIndex].options.C}</div>
+            <div>D: {flashcards[currentIndex].options.D}</div>
+          </section>
+        </div>
+        {
+          //change 5
+        }
+        <button onClick={clickHandler}>
+          {currentIndex === flashcards.length - 1
+            ? "Finish & Show Results"
+            : "Next"}
+        </button>
+      </section>
     </>
   );
 }
