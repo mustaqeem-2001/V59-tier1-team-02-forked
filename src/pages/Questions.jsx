@@ -2,8 +2,13 @@ import questions from "../data/flashcards.js";
 import { roles } from "../data/roles.js";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+//change 1
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Questions() {
+  //change 2
+  const navigate = useNavigate();
+
   const { roleId } = useParams();
 
   const roleExists = roles.find(function (role) {
@@ -27,20 +32,34 @@ export default function Questions() {
   const flashcards = roleQuestions.flashcards;
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  //not needed. can delete
   const [finished, setFinished] = useState(false);
 
-  useEffect(function () {
-    setCurrentIndex(0);
-  }, [roleId]);
+  useEffect(
+    function () {
+      setCurrentIndex(0);
+    },
+    [roleId],
+  );
 
   const currentQuestion = flashcards[currentIndex];
 
-  function goToNextQuestion() {
+  //change 3
+  function finish() {
+    navigate("/results", {
+      state: {
+        score: 5,
+        totalQuestions: flashcards.length, //may add replace: true later
+        roleId: roleId,
+      },
+    });
+  }
+  //change 4
+  function clickHandler() {
     if (currentIndex < flashcards.length - 1) {
       setCurrentIndex(currentIndex + 1);
-    }
-    else {
-      setFinished(true);
+    } else {
+      finish();
     }
   }
 
@@ -48,26 +67,27 @@ export default function Questions() {
     <>
       <h1>{roleLabel} Questions</h1>
 
-      {finished ? (
-        <div className="no-more-questions">
-          You have completed all questions!
+      <section className="question-section">
+        <div>
+          <section className="question-title">
+            Question {currentIndex + 1}: {flashcards[currentIndex].question}
+          </section>
+          <section className="question-choices">
+            <div>A: {flashcards[currentIndex].options.A}</div>
+            <div>B: {flashcards[currentIndex].options.B}</div>
+            <div>C: {flashcards[currentIndex].options.C}</div>
+            <div>D: {flashcards[currentIndex].options.D}</div>
+          </section>
         </div>
-      ) : (
-        <section className="question-section">
-          <div>
-            <section className="question-title">
-              Question {currentIndex + 1}: {flashcards[currentIndex].question}
-            </section>
-            <section className="question-choices">
-              <div>A: {flashcards[currentIndex].options.A}</div>
-              <div>B: {flashcards[currentIndex].options.B}</div>
-              <div>C: {flashcards[currentIndex].options.C}</div>
-              <div>D: {flashcards[currentIndex].options.D}</div>
-            </section>
-          </div>
-          <button onClick={goToNextQuestion}>Next</button>
-        </section>
-      )}
+        {
+          //change 5
+        }
+        <button onClick={clickHandler}>
+          {currentIndex === flashcards.length - 1
+            ? "Finish & Show Results"
+            : "Next"}
+        </button>
+      </section>
     </>
   );
 }
