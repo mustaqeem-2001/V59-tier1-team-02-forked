@@ -25,7 +25,7 @@ export default function Results() {
       <button onClick={() => navigate(`/questions/${roleId}`)}>
         Try Again (Same Role)
       </button>
-      <button onClick={() => navigate("/")}>Change Role</button>
+      <button onClick={() => navigate("/roles")}>Change Role</button>
     </>
   );
 }
