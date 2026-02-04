@@ -16,8 +16,6 @@ export default function Roles() {
 
   return (
     <>
-      <Header />
-
       <main style={{ padding: 24, maxWidth: 900, margin: "0 auto" }}>
         <h2 style={{ marginTop: 0, marginBottom: 16 }}>Master Your Scrum Interview</h2>
 
@@ -27,8 +25,6 @@ export default function Roles() {
 
         {/* rest of your page content */}
       </main>
-
-      <Footer />
     </>
   );
 }
