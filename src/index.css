@@ -13,28 +13,19 @@
   --font-body: "Nunito Sans", sans-serif;
   --font-heading: "Edu SA Beginner", cursive;
 
-  /* 📏 Font Sizes (multiples of 4px) */
---font-size-xs: clamp(0.8rem, 0.7rem + 0.5vw, 0.8rem);   /* 8px */
---font-size-sm: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);     /* 10px → 12px */
---font-size-md: clamp(1.2rem, 1.1rem + 0.8vw, 1.6rem);   /* 12px → 16px */
---font-size-lg: clamp(1.6rem, 1.4rem + 1vw, 2rem);       /* 16px → 20px */
---font-size-xl: clamp(2rem, 1.8rem + 1.2vw, 2.4rem);     /* 20px → 24px */
---font-size-2xl: clamp(2.4rem, 2rem + 1.5vw, 3.2rem);    /* 24px → 32px */
---font-size-3xl: clamp(3.2rem, 2.6rem + 2vw, 4rem);      /* 32px → 40px */
-
-/* 🔤 Heading Styles (aligned to 4px grid) */
+/* Font Size (aligned to 4px grid) */
 --h1-size: clamp(3.6rem, 3rem + 2vw, 5.6rem); /* 36px → 56px */
 --h1-weight: 700;
---h2-size: clamp(2.8rem, 2.4rem + 1.5vw, 4rem); /* 28px → 40px */
+--h2-size: clamp(2.6rem, 2rem + 1.5vw, 3.2rem); /* 28px → 40px */
 --h2-weight: 600;
---h3-size: clamp(2.4rem, 2rem + 1vw, 3.2rem);   /* 24px → 32px */
+--h3-size: clamp(1.8rem, 1.8rem + 1vw, 2.6rem);   /* 24px → 32px */
 --h3-weight: 600;
 --h4-size: clamp(2rem, 1.6rem + 0.8vw, 2.4rem); /* 20px → 24px */
 --h4-weight: 500;
---p-size: clamp(1.2rem, 1rem + 0.5vw, 1.6rem);  /* 12px → 16px */
+--p-size: clamp(1.4rem, 1rem + 0.5vw, 1.6rem);  /* 12px → 16px */
 --p-weight: 500;
 
-/* 📐 Spacing (4px multiples) */
+/* Spacing (4px multiples) */
 --space-xs: 0.4rem;   /* 4px */
 --space-sm: 0.8rem;   /* 8px */
 --space-md: 1.2rem;   /* 12px */
@@ -43,18 +34,7 @@
 --margin-inline-base: clamp(0.8rem, 5vw, 2.4rem); /* 8px → 24px */
 --margin-block-base: clamp(0.8rem, 5vh, 2.4rem);  /* 8px → 24px */
 
-/* 🟦 Border Radius (4px multiples) */
---radius-sm: 0.4rem;  /* 4px */
---radius-md: 0.8rem;  /* 8px */
---radius-lg: 1.2rem;  /* 12px */
---radius-full: 9999px;
-
-  /* 🌗 Shadows */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-  --shadow-lg: 0 10px 15px rgba(0,0,0,0.15);
-
-  /* 📱 Breakpoints */
+  /* Breakpoints */
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
@@ -130,3 +110,22 @@ nav a {
   padding: var(--space-sm);
   margin: var(--space-sm);
 }
+
+button {
+  font-size: var(--p-size);
+  font-weight: 600;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: 1rem; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #e9e9e9;
+  border: none;
+  cursor: pointer;
+  margin-block: var(--space-lg);
+}
+
+/* .card {
+  width: 80%;
+  max-width: 300px;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */

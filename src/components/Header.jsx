@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
@@ -6,13 +7,13 @@ function Header() {
         <nav>
           <ul className="flex gap-4">
             <li>
-              <a href="/" className="hover:text-blue-400">Home</a>
+              <Link to="/" className="hover:text-blue-400">Home</Link>
             </li>
             <li>
-              <a href="/about" className="hover:text-blue-400">SCRUM Roles</a>
+              <Link to="/roles" className="hover:text-blue-400">SCRUM Roles</Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-blue-400">Interview Questions</a>
+              <Link to="/contact" className="hover:text-blue-400">Interview Questions</Link>
             </li>
           </ul>
         </nav>

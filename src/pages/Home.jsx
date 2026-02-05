@@ -1,4 +1,5 @@
-
+import Button from "../components/Pri-Button.jsx"
+import CardHomepage from "../components/CardHomepage.jsx";
 
 export default function App() {
   return (
@@ -24,12 +25,9 @@ export default function App() {
           </p>
 
           <div className="mt-space-lg flex gap-space-sm">
-            <button className="bg-primary text-white px-xl py-md rounded-md font-semibold">
-              Get Started
-            </button>
-            <button className="border border-secondary text-secondary px-md py-sm rounded-md">
-              Learn More
-            </button>
+
+            <Button to="/roles">Get Started</Button>
+
           </div>
         </div>
 
@@ -45,31 +43,14 @@ export default function App() {
 
       {/* Features Card row */}
       <section className="max-w-7xl mx-auto px-margin-inline-base py-space-xl grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-        <div className="p-md rounded-lg shadow-md bg-surface">
-          <h3 className="text-lg font-semibold">Confidence Booster</h3>
-          <p className="mt-space-sm text-md text-muted">
-            Practise one question at a time in a focused flashcard flow that builds comfort and interview readiness.
-          </p>
-        </div>
 
-        <div className="p-md rounded-lg shadow-md bg-surface">
-          <h3 className="text-lg font-semibold">Targeted Practise Questions</h3>
-          <p className="mt-space-sm text-md text-muted">
-            Select your Scrum role and get questions tailored to your specific role.
-          </p>
-        </div>
-
-        <div className="p-md rounded-lg shadow-md bg-surface">
-          <h3 className="text-lg font-semibold">Instant Feedback</h3>
-          <p className="mt-space-sm text-md text-muted">
-            Know immediately if you're right or wrong, with clear rationale to help you improve as you go.
-          </p>
-        </div>
-
+        <CardHomepage />
+        
+        {/* Second button */}
         <div className="max-w-7xl mx-auto px-margin-inline-base py-space-xl flex justify-center">
-          <button className="bg-primary text-white px-xxl py-md rounded-md font-semibold">
-            Get Started
-          </button>
+
+          <Button to="/roles">Get Started</Button>
+
         </div>
       </section>
     </main>

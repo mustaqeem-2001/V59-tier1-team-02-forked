@@ -1,8 +1,11 @@
-export default function CardHomepage({ title, description }) {
+import card1 from "../assets/card-1.png"
+import card2 from "../assets/card-2.png"
+import card3 from "../assets/card-3.png"
+
+export default function CardHomepage() {
   return (
-    <>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </>
+    <div>
+      
+    </div>
   );
 }
