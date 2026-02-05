@@ -4,9 +4,7 @@ export default function Header() {
     return <>
     <nav>
         <ul>
-            <li>
-                <Link to ="/">Home</Link>
-            </li>
+            <li>Home</li>
         </ul>
     </nav>
     </>
