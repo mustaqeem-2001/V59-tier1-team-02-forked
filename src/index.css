@@ -62,6 +62,7 @@ body {
   margin-block: var(--margin-block-base);
   font-size: var(--p-size);
   font-weight: var(--p-weight);
+  max-width: 100%;
 }
     
 p {

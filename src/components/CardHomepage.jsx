@@ -1,11 +1,12 @@
-import card1 from "../assets/card-1.png"
-import card2 from "../assets/card-2.png"
-import card3 from "../assets/card-3.png"
+function CardHomepage(){
+    return(
+        <div className = 'card'>
+            <img> </img>
+            <h4> Confidence Booster
+</h4>
+            <p>Practise one question at a time in a focused flashcard flow that builds comfort and interview readiness.</p>
+        </div>
+    );
+};
 
-export default function CardHomepage() {
-  return (
-    <div>
-      
-    </div>
-  );
-}
+export default CardHomepage
