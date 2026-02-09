@@ -3,6 +3,7 @@ import Questions from "./pages/Questions.jsx";
 import Roles from "./pages/Roles.jsx";
 import { Routes, Route } from "react-router-dom";
 import Results from "./pages/Results.jsx";
+import ChatBox from "./components/ChatBox.jsx";
 
 export default function App() {
     return (
@@ -15,6 +16,9 @@ export default function App() {
                 }
                 <Route path="/results" element={<Results />} />
             </Routes>
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+                <ChatBox />
+            </div>
         </>
     )
 }
