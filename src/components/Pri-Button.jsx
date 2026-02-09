@@ -14,7 +14,7 @@ export default function Button({ children, to, onClick }) {
   return (
     <button
       onClick={handleClick}
-      className="bg-[#2563EB] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#1038C0] transition"
+      className="bg-[#2563EB] text-white font-semibold py-[var(--space-lg)] px-[var(--space-xl)] rounded-lg hover:bg-[#1038C0] transition"
     >
       {children}
     </button>

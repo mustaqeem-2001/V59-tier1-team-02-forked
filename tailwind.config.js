@@ -43,17 +43,20 @@ export default {
           xl: "var(--space-xl)", 
 
         }, 
+
       borderRadius: {
         sm: "var(--radius-sm)",
         md: "var(--radius-md)",
         lg: "var(--radius-lg)",
         full: "var(--radius-full)",
       },
+
       boxShadow: {
         sm: "var(--shadow-sm)",
         md: "var(--shadow-md)",
         lg: "var(--shadow-lg)",
       },
+      
       screens: {
         sm: "var(--breakpoint-sm)",
         md: "var(--breakpoint-md)",

@@ -8,19 +8,19 @@ const CardHomepage = ({
   return (
     
     // card
-      <div className=" bg-white rounded-[3rem] shadow-lg border-4 border-[var(--color-secondary)] px-[var(--space-lg)] pt-[var(--space-lg)] pb-[var(--space-xl)]"> 
+      <div className="bg-white rounded-[3rem] shadow-lg border-4 border-[var(--color-secondary)] px-[var(--space-lg)] pt-[var(--space-lg)] pb-[var(--space-xl)]"> 
         <div className="flex items-start gap-8">
           {/* Emoji container */}
-          <div className="inline-flex items-center  justify-center rounded-[var(--radius-md)] p-[1rem] bg-[var(--color-bg2)]">
+          <div className="inline-flex items-center  justify-center rounded-[var(--radius-md)] p-[var(--space-md)] bg-[var(--color-bg2)]">
             <h2>{emoji}</h2>
           </div>
           
           {/* Text content */}
-          <div className="flex-1 px-[var(--space-md)]">
+          <div className="flex-1 px-[var(--space-md)] w-full">
             <h2 className="text-6xl font-bold text-gray-800 mb-6">
               {title}
             </h2>
-            <p className="text-4xl text-gray-600 leading-relaxed">
+            <p className="text-[var(--p-size)] w-full leading-relaxed">
               {description}
             </p>
           </div>
