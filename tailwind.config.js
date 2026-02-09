@@ -12,10 +12,12 @@ export default {
         text: "var(--color-text)",
         muted: "var(--color-muted)",
       },
+
       fontFamily: {
         body: "var(--font-body)",
         heading: "var(--font-heading)",
       },
+
       fontSize: {
         // Generic responsive sizes
         xs: "var(--font-size-xs)",
@@ -32,13 +34,15 @@ export default {
         h3: ["var(--h3-size)", { lineHeight: "1.4", fontWeight: "var(--h3-weight)" }],
         h4: ["var(--h4-size)", { lineHeight: "1.5", fontWeight: "var(--h4-weight)" }],
       },
-      spacing: {
-        xs: "var(--space-xs)",
-        sm: "var(--space-sm)",
-        md: "var(--space-md)",
-        lg: "var(--space-lg)",
-        xl: "var(--space-xl)",
-      },
+      
+        spacing: { 
+          xs: "var(--space-xs)", 
+          sm: "var(--space-sm)", 
+          md: "var(--space-md)", 
+          lg: "var(--space-lg)", 
+          xl: "var(--space-xl)", 
+
+        }, 
       borderRadius: {
         sm: "var(--radius-sm)",
         md: "var(--radius-md)",
@@ -57,6 +61,7 @@ export default {
         xl: "var(--breakpoint-xl)",
       },
     },
-  },
+
   plugins: [],
-};
+  },
+};  

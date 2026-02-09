@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
     return (
-      <header className="p-4 flex justify-between items-center border-b border-gray-600">
+      <header className="p-sm mb-md flex justify-between items-center border-b border-gray-600">
         <h3 className="font-heading ">Pathfinder</h3>
         <nav>
           <ul className="flex gap-4">
