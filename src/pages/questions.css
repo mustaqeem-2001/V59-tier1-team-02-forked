@@ -51,6 +51,30 @@
     border: 3px solid #E6ECF2;
     padding: 2rem;
     margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.choice.selected {
+  background-color: #e2eafa; /* Light blue highlight */
+  border-color: #2563eb;
+}
+
+.choice.correct {
+  background-color: #dcfce7; /* Green */
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+.choice.wrong {
+  background-color: #fee2e2; /* Red */
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+/* Disable hover if already submitted */
+.choice:hover:not(.correct):not(.wrong) {
+  background-color: #f3f4f6;
 }
 
 .nextQuestionBtn {
