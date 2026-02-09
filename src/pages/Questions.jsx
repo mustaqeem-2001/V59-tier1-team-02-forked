@@ -3,8 +3,9 @@ import { roles } from "../data/roles.js";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-export default function Questions() {
+import "./questions.css";
+export default function Questions() 
+{
   const navigate = useNavigate();
   const { roleId } = useParams();
   
@@ -81,27 +82,25 @@ export default function Questions() {
   }
   
   return (
-    <>
-      <h1>{roleLabel} Questions</h1>
-      
+    <>      
       <section className="question-section">
-        <div>
+        <div className="question-section-wrapper">
           <section className="question-title">
-            Question {currentIndex + 1}: {currentQuestion.question}
+            <h1>Question {currentIndex + 1}: {currentQuestion.question}</h1>
           </section>
           <section className="question-choices">
             {currentQuestion.shuffledOptions.map(([key, text]) => ( // Mapping needs to be done here now since options are no longer fixed
-              <div key={key}>
-                {key}: {text}
+              <div className="choice" key={key}>
+                {text}
               </div>
             ))}
           </section>
+          <button className="nextQuestionBtn" onClick={clickHandler}>
+            {currentIndex === shuffledQuestions.length - 1
+              ? "Finish & Show Results"
+              : "Submit"}
+          </button>
         </div>
-        <button onClick={clickHandler}>
-          {currentIndex === shuffledQuestions.length - 1
-            ? "Finish & Show Results"
-            : "Next"}
-        </button>
       </section>
     </>
   );
