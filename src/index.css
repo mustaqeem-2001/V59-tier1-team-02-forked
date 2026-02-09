@@ -17,22 +17,22 @@
 /* Font Size (aligned to 4px grid) */
 --h1-size: clamp(3.6rem, 3rem + 2vw, 5.6rem); /* 36px → 56px */
 --h1-weight: 700;
---h2-size: clamp(1.8rem, 2rem + 1vw, 2.8rem); /* 28px → 40px */
+--h2-size: clamp(1.8rem, 1.6rem + 1vw, 2.8rem); /* 28px → 40px */
 --h2-weight: 600;
---h3-size: clamp(1.8rem, 1.8rem + 1vw, 2.6rem);   /* 24px → 32px */
+--h3-size: clamp(1.6rem, 1.6rem + 0.5vw, 2.4rem);   /* 24px → 32px */
 --h3-weight: 600;
---h4-size: clamp(2rem, 1.6rem + 0.8vw, 2.4rem); /* 20px → 24px */
---h4-weight: 500;
---p-size: clamp(1.4rem, 1.2rem + 0.5vw, 1.6rem);  /* 12px → 16px */
+--h4-size: clamp(1.6rem, 1.6rem + 0.5vw, 2.4rem); /* 20px → 24px */
+--h4-weight: 600;
+--p-size: clamp(1.6rem, 1rem + 0.5vw, 1.6rem);  /* 12px → 16px */
 --p-weight: 500;
 --caption: clamp(1.2rem, 1rem + 0.5vw, 1.4rem);  /* 12px */ ;
 
 /* Spacing (4px multiples) */
 --space-xs: 0.4rem;   /* 4px */
 --space-sm: 0.8rem;   /* 8px */
---space-md: 1.2rem;   /* 12px */
+--space-md: clamp(1rem, 1vw, 1.2rem);   /* 12px */
 --space-lg: clamp(1.4rem, 2vw, 2rem); /* 16px → 20px */
---space-xl: 3.2rem;   /* 32px */
+--space-xl: clamp(3.2rem, 3.2rem + 2vw, 4.2rem);   /* 32px */
 --margin-inline-base: clamp(0.8rem, 5vw, 2.4rem); /* 8px → 24px */
 --margin-block-base: clamp(0.8rem, 5vh, 2.4rem);  /* 8px → 24px */
 
@@ -106,7 +106,7 @@ h3 {
 }
 
 h4 {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: var(--h4-size);
   font-weight: var(--h4-weight);
   line-height: 1.5;
@@ -172,3 +172,15 @@ button {
   border-radius: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 } */
+
+@media screen and (min-width: 640px) {
+  .features-cards-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sec-1_imagetext_container{
+    flex-direction: row;
+    gap: var(--space-lg);
+  }
+}

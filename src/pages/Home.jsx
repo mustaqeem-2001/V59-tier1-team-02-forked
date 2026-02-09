@@ -7,20 +7,21 @@ export default function Home() {
     <main className="max-w-screen flex flex-col gap-[var(--space-xl)] bg-background text-text font-body ">
 
       <section className="flex flex-col">
-    		<div className="flex flex-row md:flex-col sm:flex-col gap-8 sec-1_imagetext_container">
-    			<div className="w-[60%] md:w-full sec-1_text-container ">
+    		<div className="flex flex-col gap-[var(--space-lg)] sec-1_imagetext_container">
+    			<div className="w-full md:w-full sec-1_text-container ">
     				{/* Level up tag */}
     				<div className="levelup-tag">
       				<p className="levelup-tag-text">LEVEL UP YOUR CAREER</p>
     				</div>
-    				<h1>
+    				<h1 className="w-full">
       				Scrum your way to a confident interview with role-based flashcards.
     				</h1>
-    				<p className="mt-space-md text-lg text-text font-medium">
-      				Level up with Chingus worldwide! practise anytime, anywhere!
-    				</p>
+    				<h4 className="mt-space-md text-[var(--h4-size)] font-semibold">
+      				Level up with Chingus worldwide! 
+              practise anytime, anywhere!
+    				</h4>
   				</div>
-					<div className="w-[50%] md:w-full">
+					<div className="w-full flex justify-center md:w-full sec-1_image-container">
 						<img
     					src={hero}
     					alt="Hero illustration for interview prep"
@@ -40,7 +41,7 @@ export default function Home() {
       <section className="px-margin-inline-base py-space-xl flex flex-col md:flex-col gap-[var(--space-xl)]">
 
         {/* Features Card row */}
-        <div className="flex flex-row md:flex-col lg:flex-col gap-[var(--space-md)]">
+        <div className="features-cards-container flex flex-col gap-[var(--space-sm)]">
         {/* Card-1 */}
           <CardHomepage 
             emoji="💪"
@@ -65,8 +66,6 @@ export default function Home() {
         </div>
       </section>
     </main>
-
-    
   );
 
   
