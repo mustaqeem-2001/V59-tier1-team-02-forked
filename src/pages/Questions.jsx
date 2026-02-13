@@ -4,159 +4,165 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./questions.css";
-export default function Questions() 
-{
+export default function Questions() {
   const navigate = useNavigate();
   const { roleId } = useParams();
   const [selectedKey, setSelectedKey] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [wrongGuesses, setWrongGuesses] = useState([]);
   const [showAnswer, setShowAnswer] = useState(false);
-    const roleExists = roles.find(function (role) {
+  const [score, setScore] = useState(0);
+  const roleExists = roles.find(function (role) {
     return role.id === roleId;
   });
-  
+
   if (!roleExists) {
     return <h1>Role not found</h1>;
   }
-  
+
   const roleLabel = roleExists.label;
-  
+
   const roleQuestions = questions.find(function (q) {
     return q.role === roleLabel;
   });
-  
+
   if (!roleQuestions) {
     return <h1>No questions available</h1>;
   }
-  
+
   const flashcards = roleQuestions.flashcards;
-  
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
-  
+
   function shuffleOptions(question) {
     const optionsArray = Object.entries(question.options);
-    
+
     for (let i = optionsArray.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [optionsArray[i], optionsArray[j]] = [optionsArray[j], optionsArray[i]];
     }
-    
-    return { 
+
+    return {
       ...question,
-      shuffledOptions: optionsArray 
+      shuffledOptions: optionsArray,
     };
   }
-  
+
   useEffect(
     function () {
       const shuffled = flashcards.map(shuffleOptions);
       setShuffledQuestions(shuffled);
       setCurrentIndex(0);
     },
-    [roleId]
+    [roleId],
   );
-  
+
   if (shuffledQuestions.length === 0) {
     return <div>Loading...</div>;
   }
-  
+
   const currentQuestion = shuffledQuestions[currentIndex];
-  
+
   function finish() {
     navigate("/results", {
       state: {
-        score: 5,
+        score: score,
         totalQuestions: flashcards.length,
         roleId: roleId,
       },
     });
   }
-  
+
   function handleSelect(key) {
-  if (showAnswer) return;
-  setSelectedKey(key);
-}
+    if (showAnswer) return;
+    setSelectedKey(key);
+  }
 
-function clickHandler() {
-  if (!showAnswer) {
-    const isCorrect = selectedKey === currentQuestion.answer;
+  function clickHandler() {
+    if (!showAnswer) {
+      const isCorrect = selectedKey === currentQuestion.answer;
 
-    if (isCorrect) {
-      setShowAnswer(true);
-    } else {
-      if (!wrongGuesses.includes(selectedKey)) {
-        const newStrikes = [...wrongGuesses, selectedKey];
-        setWrongGuesses(newStrikes);
-        
-        setSelectedKey(null); 
+      if (isCorrect) {
+        setShowAnswer(true);
+        // If the array of wrong guesses is still empty, they get a point!
+        if (wrongGuesses.length === 0) {
+          setScore((prevScore) => prevScore + 1);
+        }
+      } else {
+        if (!wrongGuesses.includes(selectedKey)) {
+          const newStrikes = [...wrongGuesses, selectedKey];
+          setWrongGuesses(newStrikes);
 
-        if (newStrikes.length >= 3) {
-          setShowAnswer(true);
+          setSelectedKey(null);
+
+          if (newStrikes.length >= 3) {
+            setShowAnswer(true);
+          }
         }
       }
-    }
-  } else {
-    if (currentIndex < shuffledQuestions.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-      setSelectedKey(null);
-      setWrongGuesses([]);
-      setShowAnswer(false);
     } else {
-      finish();
+      if (currentIndex < shuffledQuestions.length - 1) {
+        setCurrentIndex(currentIndex + 1);
+        setSelectedKey(null);
+        setWrongGuesses([]);
+        setShowAnswer(false);
+      } else {
+        finish();
+      }
     }
   }
-}
-  
+
   return (
-  <>      
-    <section className="question-section">
-      <div className="question-section-wrapper">
-        <section className="question-title">
-          <h1>Question {currentIndex + 1}: {currentQuestion.question}</h1>
-        </section>
+    <>
+      <section className="question-section">
+        <div className="question-section-wrapper">
+          <section className="question-title">
+            <h1>
+              Question {currentIndex + 1}: {currentQuestion.question}
+            </h1>
+          </section>
 
-        <section className="question-choices">
-          {currentQuestion.shuffledOptions.map(([key, text]) => {
-          const isCorrect = key === currentQuestion.answer;
-          const isWrongGuess = wrongGuesses.includes(key);
-          const isSelected = key === selectedKey;
+          <section className="question-choices">
+            {currentQuestion.shuffledOptions.map(([key, text]) => {
+              const isCorrect = key === currentQuestion.answer;
+              const isWrongGuess = wrongGuesses.includes(key);
+              const isSelected = key === selectedKey;
 
-          let statusClass = "";
-          
-          if (isWrongGuess) {
-            statusClass = "wrong";
-          } 
-          else if (showAnswer && isCorrect) {
-            statusClass = "correct";
-          } 
-          else if (isSelected) {
-            statusClass = "selected";
-          }
+              let statusClass = "";
 
-          return (
-              <div 
-                key={key} 
-                className={`choice ${statusClass}`} 
-                onClick={() => handleSelect(key)}
-              >
-                {text}
-              </div>
+              if (isWrongGuess) {
+                statusClass = "wrong";
+              } else if (showAnswer && isCorrect) {
+                statusClass = "correct";
+              } else if (isSelected) {
+                statusClass = "selected";
+              }
+
+              return (
+                <div
+                  key={key}
+                  className={`choice ${statusClass}`}
+                  onClick={() => handleSelect(key)}
+                >
+                  {text}
+                </div>
               );
             })}
-        </section>
-        <button 
-          className="nextQuestionBtn" 
-          onClick={clickHandler}
-          disabled={!selectedKey && !showAnswer} 
-        >
-          {showAnswer 
-            ? (currentIndex === shuffledQuestions.length - 1 ? "Finish" : "Next Question") 
-            : "Submit"}
-        </button>
-      </div>
-    </section>
+          </section>
+          <button
+            className="nextQuestionBtn"
+            onClick={clickHandler}
+            disabled={!selectedKey && !showAnswer}
+          >
+            {showAnswer
+              ? currentIndex === shuffledQuestions.length - 1
+                ? "Finish"
+                : "Next Question"
+              : "Submit"}
+          </button>
+        </div>
+      </section>
     </>
-);
+  );
 }
