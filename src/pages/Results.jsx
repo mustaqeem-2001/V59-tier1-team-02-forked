@@ -7,7 +7,7 @@ export default function Results() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { score, totalQuestions, roleId } = location.state || {};
+  const { score, totalQuestions, roleId,questions,firstAttempts } = location.state || {};
 
   useEffect(() => {
     if (!location.state) navigate("/", { replace: true });
@@ -101,6 +101,49 @@ export default function Results() {
           </div>
         </div>
       </main>
+      {/* --- START OF REVIEW SECTION --- */}
+          <div className="w-full mt-10 mb-20 flex flex-col gap-6">
+            <h2 className="font-['Nunito_Sans'] font-bold text-[24px] text-[#4B4B4B] text-center">
+              Review Your Answers
+            </h2>
+            
+            {questions && questions.map((q, index) => {
+              // 1. Find the correct answer text
+              const correctPair = q.shuffledOptions.find(([key]) => key === q.answer);
+              const correctText = correctPair ? correctPair[1] : "";
+              
+              // 2. Get the user's guess
+              const userGuess = firstAttempts[index];
+              const isCorrect = userGuess === correctText;
+
+              return (
+                <div 
+                  key={index} 
+                  className={`p-6 rounded-[20px] border-2 flex flex-col gap-2 ${
+                    isCorrect ? "border-[#B2C8F8] bg-blue-50" : "border-red-200 bg-red-50"
+                  }`}
+                >
+                  {/* The Question */}
+                  <p className="font-['Nunito_Sans'] font-bold text-[18px] text-[#4B4B4B]">
+                    {index + 1}. {q.question}
+                  </p>
+                  
+                  {/* The User's Input */}
+                  <p className="font-['Nunito_Sans'] font-medium text-[16px] text-[#4B4B4B]">
+                    <span className="opacity-70">Your Answer:</span> {userGuess}
+                  </p>
+
+                  {/* The Verdict (The logic you asked for) */}
+                  <p className={`font-['Nunito_Sans'] font-bold text-[16px] ${
+                    isCorrect ? "text-[#2563EB]" : "text-red-600"
+                  }`}>
+                    Answer: {isCorrect ? "Correct" : correctText}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+          {/* --- END OF REVIEW SECTION --- */}
 
       <Footer />
     </div>
