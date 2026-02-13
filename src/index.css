@@ -1,7 +1,149 @@
 @import "tailwindcss";
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: var(--font-body);
 }
 
+html {
+  font-size: 62.5%; /* 1rem = 10px baseline */
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-block: var(--margin-block-base);
+  font-size: var(--p-size);
+  font-weight: var(--p-weight);
+  max-width: 100%;
+}
+
+header{
+  margin-inline: var(--margin-inline-base);
+}
+
+.main-content {
+  margin-inline: var(--margin-inline-base);
+}
+ 
+p {
+  font-size: var(--p-size);
+  font-weight: var(--p-weight);
+}
+
+/* Heading elements styled with tokens */
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: 1.3;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  line-height: 1.4;
+}
+
+h4 {
+  font-family: var(--font-body);
+  font-size: var(--h4-size);
+  font-weight: var(--h4-weight);
+  line-height: 1.5;
+}
+
+i{
+  color: var(--color-primary);
+}
+
+nav {
+  margin-block: var(--space-lg);
+}
+
+nav a {
+  color: var(--color-text);
+  transition: color 0.3s ease;
+  font-size: var(--p-size);
+  font-weight: 600;
+  padding: var(--space-sm);
+  margin: var(--space-sm);
+}
+
+header{
+  margin-block: 2.4rem;
+}
+
+.levelup-tag{
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg2);
+  max-width: fit-content;
+  
+}
+
+.levelup-tag-text{
+  color: var(--color-primary);
+  font-size: var(--caption);
+  
+}
+
+/* this is the div that contains the "LEVEL UP YOUR CAREER" tag, homepage's headline and paragraph before the button */
+.sec-1_text-container{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+button {
+  font-size: var(--p-size);
+  font-weight: 600;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md); 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #e9e9e9;
+  border: none;
+  cursor: pointer;
+  margin-block: var(--space-lg);
+}
+
+
+
+/* FOOTER */
+footer {
+  background-color: var(--color-primary);
+  color: white;
+  padding-block: var(--space-xl);
+  padding-inline: var(--margin-inline-base);
+  margin-top: var(--space-xl);
+  
+}
+
+.footer-heading{
+  
+}
+
+@media screen and (min-width: 640px) {
+  .features-cards-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sec-1_imagetext_container{
+    flex-direction: row;
+    gap: var(--space-lg);
+  }
+}
