@@ -85,7 +85,6 @@ export default function Questions() {
 
       if (isCorrect) {
         setShowAnswer(true);
-        // If the array of wrong guesses is still empty, they get a point!
         if (wrongGuesses.length === 0) {
           setScore((prevScore) => prevScore + 1);
         }
@@ -150,6 +149,12 @@ export default function Questions() {
               );
             })}
           </section>
+          {showAnswer && (
+            <div className="rationale-box">
+              <h3>Rationale:</h3>
+              <p>{currentQuestion.rationale}</p>
+            </div>
+          )}
           <button
             className="nextQuestionBtn"
             onClick={clickHandler}
