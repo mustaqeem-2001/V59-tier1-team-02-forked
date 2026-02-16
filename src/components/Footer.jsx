@@ -91,16 +91,16 @@ export default function Footer() {
                     </a>
                   </li>
 
-                  {/* Mustaqueem */}
+                  {/* Mustaqeem */}
                   <li className="flex items-center justify-start gap-space-sm">
-                    <span className="text-md">Mustaqueem</span>
+                    <span className="text-md">Mustaqeem</span>
                     <a
                       href="#"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-auto text-white hover:text-secondary"
-                      aria-label="Mustaqueem GitHub"
-                      title="Mustaqueem GitHub"
+                      aria-label="Mustaqeem GitHub"
+                      title="Mustaqeem GitHub"
                     >
                       <i className="fa-brands fa-github text-xl" aria-hidden="true" />
                     </a>
@@ -109,8 +109,8 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-space-sm text-white hover:text-secondary"
-                      aria-label="Mustaqueem LinkedIn"
-                      title="Mustaqueem LinkedIn"
+                      aria-label="Mustaqeem LinkedIn"
+                      title="Mustaqeem LinkedIn"
                     >
                       <i className="fa-brands fa-linkedin text-xl" aria-hidden="true" />
                     </a>
