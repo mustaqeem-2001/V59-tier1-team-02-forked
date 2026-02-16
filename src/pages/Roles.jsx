@@ -19,7 +19,7 @@ export default function Roles() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
-      <Header />
+      
 
       <main className="flex-grow flex flex-col items-center px-4 relative pt-6 md:pt-12 lg:pt-[128.78px]">
         {/* CURLY ARROW - Positioned as per Figma image 6 */}
@@ -113,7 +113,7 @@ export default function Roles() {
         </div>
       </main>
 
-      <Footer />
+      
     </div>
   );
 }

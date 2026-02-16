@@ -12,6 +12,7 @@ export default function Questions() {
   const [wrongGuesses, setWrongGuesses] = useState([]);
   const [showAnswer, setShowAnswer] = useState(false);
   const [score, setScore] = useState(0);
+  const [firstAttempts, setFirstAttempts] = useState([])
   const roleExists = roles.find(function (role) {
     return role.id === roleId;
   });
@@ -61,6 +62,8 @@ export default function Questions() {
 
   setShuffledQuestions(shuffled);
   setCurrentIndex(0);
+ setFirstAttempts([])
+
 }, [roleId]);
 
   if (shuffledQuestions.length === 0) {
@@ -72,9 +75,11 @@ export default function Questions() {
   function finish() {
     navigate("/results", {
       state: {
-        score: score,
+        score,
         totalQuestions: flashcards.length,
-        roleId: roleId,
+        roleId,
+        questions: shuffledQuestions, // Question text and correct keys
+        firstAttempts       // The list of what they clicked first
       },
     });
   }
@@ -87,6 +92,13 @@ export default function Questions() {
   function clickHandler() {
     if (!showAnswer) {
       const isCorrect = selectedKey === currentQuestion.answer;
+      if (wrongGuesses.length === 0) {
+      // Find the text of what they just clicked
+      const choicePair = currentQuestion.shuffledOptions.find(pair => pair[0] === selectedKey);
+      const choiceText = choicePair ? choicePair[1] : "";
+      //save first attempt
+      setFirstAttempts((prev) => [...prev, choiceText]);
+      }
 
       if (isCorrect) {
         setShowAnswer(true);
