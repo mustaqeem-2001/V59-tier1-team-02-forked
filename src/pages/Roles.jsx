@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import { roles } from "../data/roles.js";
@@ -94,8 +94,8 @@ export default function Roles() {
                     onClick={() => handleRoleSelect(role.id)}
                     className="
                       w-full h-[66px]
-                      flex flex-row items-center
-                      px-[46px] py-4
+                      py-4
+                      flex flex-col justify-center
                       rounded-2xl
                       border-4 border-[#B2C8F8]
                       bg-white
@@ -117,22 +117,4 @@ export default function Roles() {
     </div>
   );
 }
-=======
-import arrow from "../assets/curly-arror-img.png";
 
-const roles = ["Scrum Master", "Product Owner", "Developer", "Product Designer"];
-
-export default function Roles() {
-  return(
-      <div >
-        <div className="flex flex-col items-center justify-center gap-6 p-8">
-          <h3>This is the Roles Page</h3>
-        </div>
-        <img src={arrow} alt="Arrow" className="w-[12rem] h-auto mx-[24rem]" />
-         
-
-      </div>
-  );
-}
-
->>>>>>> style/homepage
