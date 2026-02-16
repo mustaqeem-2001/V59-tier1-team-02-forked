@@ -7,27 +7,30 @@ export default function ChatBox() {
     const [loading, setLoading]= useState(false)
 
     const handleSend = async () => {
-        if(!input.trim()) return
+  if (!input.trim()) return;
 
-        setMessages(prev => [...prev, {sender: "You", text: input}])
-        setInput("")
-            setLoading(true)
+  const context = window.__INTERVIEW_CONTEXT__ || {};
 
-            try {
-                const data = await sendChatMessage(input)
-                setMessages(prev => [
-                    ...prev,
-                    {sender: "Assistant", text: data.response}
-                ])
-            } catch (err) {
-                setMessages (prev => [
-                    ...prev,
-                    {sender: "Assistant", text: "Sorry, something went wrong."}
-                ])
-            } finally {
-                setLoading(false)
-            }
-        }
+  setMessages(prev => [...prev, { sender: "You", text: input }]);
+  setInput("");
+  setLoading(true);
+
+  try {
+    const data = await sendChatMessage(input, context);
+
+    setMessages(prev => [
+      ...prev,
+      { sender: "Assistant", text: data.response }
+    ]);
+  } catch (err) {
+    setMessages(prev => [
+      ...prev,
+      { sender: "Assistant", text: "Sorry, something went wrong." }
+    ]);
+  } finally {
+    setLoading(false);
+  }
+};
 
         const handlePress = (e) => {
             if (e.key === "Enter") handleSend()

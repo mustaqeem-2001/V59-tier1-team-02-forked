@@ -37,7 +37,17 @@ export const appContext = {
       triggers: ["how many attempts", "attempts"],
       answer:
         "Each question allows up to three attempts before feedback is shown."
-    }
+    },
+    {
+    triggers: ["roles", "available roles", "what roles"],
+    answer:
+      "You can practice for roles like Scrum Master, Product Owner, UI/UX Designer, Web Developer, and Python Developer."
+  },
+  {
+    triggers: ["feedback", "rationale", "why was my answer wrong"],
+    answer:
+      "After you use all attempts on a question, the app shows feedback explaining why the correct answer is right."
+  }
   ],
 
   fallbackResponse:
