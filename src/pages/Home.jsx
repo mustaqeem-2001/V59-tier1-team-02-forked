@@ -31,9 +31,7 @@ export default function Home() {
 					</div>
   			</div>
 
-  		  <div>
-      	  <Button to="/roles">Get Started</Button>
-    	  </div>
+  		
 
       </section>
       

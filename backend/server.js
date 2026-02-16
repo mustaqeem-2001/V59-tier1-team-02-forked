@@ -7,7 +7,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.use("/chat", chatRouter)
+app.use("/api/chat", chatRouter)
 
 const PORT = 3001
 app.listen(PORT, () => {

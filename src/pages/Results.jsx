@@ -1,5 +1,3 @@
-import Header from "../components/Header.jsx";
-import Footer from "../components/Footer.jsx";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -23,7 +21,7 @@ export default function Results() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
-      <Header />
+     
 
       <main className="flex-grow flex flex-col items-center px-4 pt-6 md:pt-12 lg:pt-[128.78px]">
         <div className="w-full max-w-[365px] flex flex-col items-center gap-10">
@@ -177,7 +175,7 @@ export default function Results() {
         </div>
       </main>
 
-      <Footer />
+    
     </div>
   );
 }
