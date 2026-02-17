@@ -70,10 +70,11 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   line-height: 1.6;
-  margin-block: var(--margin-block-base);
+  margin-top: var(--space-lg);
   font-size: var(--p-size);
   font-weight: var(--p-weight);
   max-width: 100%;
+  text-align: left;
 }
 
 header{
@@ -136,8 +137,13 @@ nav a {
 }
 
 header{
-  margin-block: 2.4rem;
+  margin-block: var(--space-xl);
 }
+
+/* HOMEPAGE - this is the div that contains the "LEVEL UP YOUR CAREER" tag, homepage's headline and paragraph before the button */
+
+
+/* HOMEPAGE INFO TAG */
 
 .levelup-tag{
   padding-block: 1rem;
@@ -155,12 +161,26 @@ header{
   
 }
 
-/* this is the div that contains the "LEVEL UP YOUR CAREER" tag, homepage's headline and paragraph before the button */
+/* HOMEPAGE'S HEADLINE */
+.headline{
+  margin-top: var(--space-lg);
+}
+
 .sec-1_text-container{
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-lg);
 }
+
+.hero_image-container{
+  border-radius: var(--radius-md);
+  margin-block: var(--space-xl);
+}
+
+.hero-image{
+  border-radius: var(--radius-lg);
+}
+
 
 button {
   font-size: var(--p-size);
@@ -195,20 +215,23 @@ footer a{
   color: white;
 }
 
-
 .footer-list-container{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
 }
 
 .footer-list-container > div{
   display: flex;
   flex-direction: column;
-  align-items: baseline;
+  align-items: left;
 }
 
+
 footer h2{
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
 }
 
 footer h3{
@@ -223,12 +246,13 @@ footer ul li span{
   padding-top: var(--space-lg);
 }
 
+/* REPO BADGE */
 .Repo-badge{
   font-size: clamp(5.6rem, 5rem + 2vw, 7.2rem);
   margin-inline-end: var(--space-sm);
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 768px) {
   .features-cards-container{
     display: flex;
     flex-direction: row;
@@ -239,10 +263,18 @@ footer ul li span{
     gap: var(--space-lg);
   }
 
-  .footer-list-container{
+  .footer-heading-and-lists-container{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: var(--space-lg);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-list-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    
   }
 }

@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="flex flex-col">
 
           {/* Heading + lists Container */}
-          <div className="w-full md:w-2/3">
+          <div className="w-full md:w-2/3 footer-heading-and-lists-container mx-auto">
 
             {/* Heading */}
             <h2 className="font-heading text-2xl md:text-3xl lg:text-h1 font-semibold mb-space-md footer-heading">
@@ -174,7 +174,7 @@ export default function Footer() {
               </div>
 
               {/* Shadow scrum master */}
-              <div>
+              <div className="shadow-scrum-masters-list">
                 <h3>Shadow Scrum Master</h3>
                 <ul>
                   <li className="flex items-center justify-start gap-space-sm">
