@@ -58,13 +58,24 @@ export default function Questions() {
     [questionsCopy[i], questionsCopy[j]] = [questionsCopy[j], questionsCopy[i]];
   }
 
-  const shuffled = questionsCopy.map(shuffleOptions);
+   const shuffled = questionsCopy.map(shuffleOptions);
 
   setShuffledQuestions(shuffled);
   setCurrentIndex(0);
  setFirstAttempts([])
 
 }, [roleId]);
+
+useEffect(() => {
+  if (!roleLabel) return;
+
+  window.__INTERVIEW_CONTEXT__ = {
+    role: roleLabel,
+    attemptsLeft: 3 - wrongGuesses.length,
+    questionId: currentIndex
+  };
+
+}, [roleLabel, wrongGuesses.length, currentIndex]);
 
   if (shuffledQuestions.length === 0) {
     return <div>Loading...</div>;

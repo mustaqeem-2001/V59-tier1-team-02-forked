@@ -29,7 +29,7 @@ export const appContext = {
 
   faq: [
     {
-      triggers: ["what is this app", "what does this do"],
+      triggers: ["what is this app", "what does this do", "tell me about this app"],
       answer:
         "Interview Prepper helps you practice interview questions based on your selected role."
     },
