@@ -9,10 +9,7 @@ function Header() {
               <a href="/" className="hover:text-blue-400 text-center block">Home</a>
             </li>
             <li>
-              <a href="/about" className="hover:text-blue-400 text-center block">SCRUM Roles</a>
-            </li>
-            <li>
-              <a href="/contact" className="hover:text-blue-400 text-center block">Interview Questions</a>
+              <a href="/roles" className="hover:text-blue-400 text-center block">SCRUM Roles</a>
             </li>
           </ul>
         </nav>
