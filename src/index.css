@@ -8,7 +8,7 @@
   --color-secondary: #B3C8F8; /* Light blue */
   --color-bg: #FEFFFF;
   --color-bg2: #b3c8f86c;
-  --color-text: #4B4B4B;
+  --color-text: #000000;
 
   /* 🖋 Typography */
   --font-body: "Nunito Sans", sans-serif;
@@ -131,10 +131,14 @@ i{
 nav a {
   color: var(--color-text);
   transition: color 0.3s ease;
-  font-size: var(--p-size);
+  font-size: 1.2rem;
   font-weight: 600;
   padding: var(--space-sm);
   margin: var(--space-sm);
+}
+
+nav p {
+  font-size: 1.2rem;
 }
 
 
@@ -262,6 +266,15 @@ footer ul li span{
   margin-inline-end: var(--space-sm);
 }
 
+@media screen and (min-width: 450px) {
+  nav p {
+    margin-left: 2rem;
+  }
+  nav a, nav p {
+    font-size: var(--p-size);
+  }
+}
+
 @media screen and (min-width: 768px) {
   .features-cards-container{
     display: flex;
@@ -287,4 +300,6 @@ footer ul li span{
     justify-content: space-evenly;
     
   }
+
+
 }

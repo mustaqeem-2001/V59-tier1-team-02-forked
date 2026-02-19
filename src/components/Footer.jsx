@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Repo badge / title Container */}
         <div className="flex items-center justify-start gap-space-md mb-space-lg">
           <a
-            href="https://github.com/your-org/v59-tier1-team-02"
+            href="https://github.com/chingu-voyages/V59-tier1-team-02"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-space-sm text-white no-underline"
@@ -45,7 +45,7 @@ export default function Footer() {
                   <li className="flex items-center justify-start gap-space-sm">
                     <span className="text-md">Maryann</span>
                     <a
-                      href="#"
+                      href="https://github.com/mary1na-code"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-auto text-white hover:text-secondary"
@@ -55,7 +55,7 @@ export default function Footer() {
                       <i className="fa-brands fa-github text-xl" aria-hidden="true" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/in/maryann-igwe-oruta-374309318/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-space-sm text-white hover:text-secondary"
@@ -70,7 +70,7 @@ export default function Footer() {
                   <li className="flex items-center justify-start gap-space-sm">
                     <span className="text-md">Eleni</span>
                     <a
-                      href="#"
+                      href="https://github.com/elenhpapadima"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-auto text-white hover:text-secondary"
@@ -80,7 +80,7 @@ export default function Footer() {
                       <i className="fa-brands fa-github text-xl" aria-hidden="true" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/in/eleni-papadima/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-space-sm text-white hover:text-secondary"
@@ -95,7 +95,7 @@ export default function Footer() {
                   <li className="flex items-center justify-start gap-space-sm">
                     <span className="text-md">Mustaqeem</span>
                     <a
-                      href="#"
+                      href="https://github.com/mustaqeem-2001"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-auto text-white hover:text-secondary"
@@ -105,7 +105,7 @@ export default function Footer() {
                       <i className="fa-brands fa-github text-xl" aria-hidden="true" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/in/mustaqeem-c-3a3875208/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-space-sm text-white hover:text-secondary"
@@ -116,11 +116,11 @@ export default function Footer() {
                     </a>
                   </li>
 
-                  {/* Micheal */}
+                  {/* Michael */}
                   <li className="flex items-center justify-start gap-space-sm">
-                    <span className="text-md">Micheal</span>
+                    <span className="text-md">Michael</span>
                     <a
-                      href="#"
+                      href="https://github.com/djzsmk"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-auto text-white hover:text-secondary"
@@ -130,7 +130,7 @@ export default function Footer() {
                       <i className="fa-brands fa-github text-xl" aria-hidden="true" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/in/michaeljamesdevolper/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-space-sm text-white hover:text-secondary"
@@ -150,7 +150,7 @@ export default function Footer() {
                   <li className="flex items-center justify-start gap-space-sm">
                     <span className="text-md">Furtuna</span>
                     <a
-                      href="#"
+                      href="https://github.com/Furtuna11"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-auto text-white hover:text-secondary"
@@ -160,7 +160,7 @@ export default function Footer() {
                       <i className="fa-brands fa-github text-xl" aria-hidden="true" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/in/furtuna-hab/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-space-sm text-white hover:text-secondary"
@@ -178,9 +178,9 @@ export default function Footer() {
                 <h3>Shadow Scrum Master</h3>
                 <ul>
                   <li className="flex items-center justify-start gap-space-sm">
-                    <span className="text-md">Jandro</span>
+                    <span className="text-md">Jenardo</span>
                     <a
-                      href="#"
+                      href="https://github.com/Jzitam"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-auto text-white hover:text-secondary"
@@ -190,7 +190,7 @@ export default function Footer() {
                       <i className="fa-brands fa-github text-xl" aria-hidden="true" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/in/jenardo-walker/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-space-sm text-white hover:text-secondary"
