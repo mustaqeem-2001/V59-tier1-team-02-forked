@@ -1,4 +1,3 @@
-
 import { roles } from "../data/roles.js";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
@@ -177,4 +176,3 @@ export default function Roles() {
     </section>
   );
 }
-

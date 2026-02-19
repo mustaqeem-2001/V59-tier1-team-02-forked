@@ -10,10 +10,8 @@ const formattedDate = `${day}/${month}/${year}`;
 console.log(formattedDate); // Outputs: 18/02/2026
 function Header() {
     return (
-
       <header className="p-4 flex justify-between items-center border-b border-gray-600">
         <h3 className="font-heading ml-4">Pathfinder</h3>
-
         <nav>
           <ul className="flex items-center gap-4">
             <li>
