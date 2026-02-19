@@ -8,7 +8,7 @@ const CardHomepage = ({
   return (
     
     // card
-      <div className="bg-white rounded-[3rem] shadow-lg border-4 border-[var(--color-secondary)] px-[var(--space-lg)] pt-[var(--space-lg)] pb-[var(--space-xl)]"> 
+      <div className="bg-white rounded-[3rem] shadow-lg border-4 border-[var(--color-secondary)] px-[var(--space-lg)] pt-[var(--space-lg)] pb-[var(--space-xl)] features-card"> 
         <div className="flex items-start gap-8">
           {/* Emoji container */}
           <div className="inline-flex items-center  justify-center rounded-[var(--radius-md)] p-[var(--space-md)] bg-[var(--color-bg2)]">
@@ -20,7 +20,7 @@ const CardHomepage = ({
             <h2 className="text-6xl font-bold text-gray-800 mb-6">
               {title}
             </h2>
-            <p className="text-[var(--p-size)] w-full leading-relaxed">
+            <p className="text-[var(--p-size)] w-full -24 leading-relaxed features-card-description-text">
               {description}
             </p>
           </div>
