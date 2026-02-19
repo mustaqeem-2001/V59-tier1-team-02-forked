@@ -58,7 +58,7 @@
 .choice {
     flex-grow: 1; 
     width: 100%;     
-    border: 3px solid #E6ECF2;
+    border: 3px solid #7391ea;
     padding: 1.5rem;
     cursor: pointer;
     display: flex;

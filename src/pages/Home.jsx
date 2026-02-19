@@ -11,10 +11,10 @@ export default function Home() {
     		<div className="flex flex-col  sec-1_imagetext_container">
           {/* Section 1 text  */}
     			<div className="w-full md:w-full sec-1_text-container ">
-    				{/* Level up tag */}
+    				{/* Level up tag 
     				<div className="levelup-tag">
       				<p className="levelup-tag-text">LEVEL UP YOUR CAREER</p>
-    				</div>
+    				</div> */}
             {/* Header Text */}
     				<h1 className="w-full headline">
       				Scrum your way to a confident interview with role-based flashcards.
