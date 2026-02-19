@@ -1,4 +1,4 @@
-import { appContext } from "../lib/appContext";
+import { appContext } from "../lib/appContext.js";
 
 export default function handler(req, res) {
   if (req.method !== "POST") {
