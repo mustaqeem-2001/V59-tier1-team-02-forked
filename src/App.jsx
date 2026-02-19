@@ -31,7 +31,8 @@ export default function App() {
     color: "white",
     border: "none",
     cursor: "pointer",
-    zIndex: 1000
+    zIndex: 1000,
+    border: "3px solid white"
   }}
 >
   {chatOpen ? "Close Help" : "Help"}
