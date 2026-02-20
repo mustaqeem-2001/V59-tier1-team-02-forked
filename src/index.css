@@ -263,8 +263,25 @@ footer ul li span{
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px){
+  .card-container{
+    display: flex;
+    flex-direction: column;
+  }
+
   .features-cards-container{
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .features-cards-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card-container{
     display: flex;
     flex-direction: row;
   }
