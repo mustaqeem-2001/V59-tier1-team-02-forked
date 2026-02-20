@@ -28,13 +28,19 @@
     margin: 0 auto;
 }
 
-.question-title {
+.question-title-section {
     border: 3px solid #B2C8F8;
     padding: 2rem 1.5rem;
-    width: 95%;
+    width: 80vw;
     border-radius: 12px;
     text-align: center;
 }
+.question-title {
+    margin: auto;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
 .question-choices {
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +58,7 @@
 .choice {
     flex-grow: 1; 
     width: 100%;     
-    border: 3px solid #E6ECF2;
+    border: 3px solid #7391ea;
     padding: 1.5rem;
     cursor: pointer;
     display: flex;
@@ -101,7 +107,6 @@
 /* Tablet and Desktop will be done as 2 Columns */
 @media (min-width: 768px) {
     .question-title {
-        width: 70%;
         padding: 4rem 2rem;
     }
 
@@ -116,8 +121,14 @@
 
 /* Large Screens */
 @media (min-width: 1024px) {
-    .question-title, .question-choices {
+    .question-title {
+        width: 100%;
+    }
+    .question-choices {
         width: 50%;
+    }
+    .question-title-section {
+        width: 60%;
     }
 }
 

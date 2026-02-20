@@ -21,6 +21,10 @@ export default function Questions() {
     return <h1>Role not found</h1>;
   }
 
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const roleLabel = roleExists.label;
 
   const roleQuestions = questions.find(function (q) {
@@ -58,13 +62,24 @@ export default function Questions() {
     [questionsCopy[i], questionsCopy[j]] = [questionsCopy[j], questionsCopy[i]];
   }
 
-  const shuffled = questionsCopy.map(shuffleOptions);
+   const shuffled = questionsCopy.map(shuffleOptions);
 
   setShuffledQuestions(shuffled);
   setCurrentIndex(0);
  setFirstAttempts([])
 
 }, [roleId]);
+
+useEffect(() => {
+  if (!roleLabel) return;
+
+  window.__INTERVIEW_CONTEXT__ = {
+    role: roleLabel,
+    attemptsLeft: 3 - wrongGuesses.length,
+    questionId: currentIndex
+  };
+
+}, [roleLabel, wrongGuesses.length, currentIndex]);
 
   if (shuffledQuestions.length === 0) {
     return <div>Loading...</div>;
@@ -133,8 +148,8 @@ export default function Questions() {
     <>
       <section className="question-section">
         <div className="question-section-wrapper">
-          <section className="question-title">
-            <h1>
+          <section className="question-title-section">
+            <h1 className="question-title">
               Question {currentIndex + 1}: {currentQuestion.question}
             </h1>
           </section>

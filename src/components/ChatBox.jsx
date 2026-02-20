@@ -1,10 +1,16 @@
-import { useState } from "react";
 import {sendChatMessage} from "../services/chatApi"
+import {useState, useRef, useEffect} from "react"
 
 export default function ChatBox() {
     const [messages, setMessages]= useState([])
     const [input, setInput]= useState("")
     const [loading, setLoading]= useState(false)
+    
+    const messagesEndRef= useRef(null)
+
+    useEffect (() => {
+  messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+}, [messages]);
 
     const handleSend = async () => {
   if (!input.trim()) return;
@@ -36,14 +42,36 @@ export default function ChatBox() {
             if (e.key === "Enter") handleSend()
         }
     return  (
-    <div style={{ border: "1px solid #ccc", padding: "1rem", width: "400px" }}>
+    <div style={{ 
+      border: "1px solid #ddd",
+    padding: "1rem",
+    width: "400px",
+    backgroundColor: "#f9fafb",
+    borderRadius: "12px",
+    boxShadow: "0 10px 25px rgba(0,0,0,0.15)"}}>
       <div style={{ height: "300px", overflowY: "auto", marginBottom: "1rem" }}>
         {messages.map((m, i) => (
-          <div key={i}>
-            <strong>{m.sender}:</strong> {m.text}
+          <div
+          key={i}
+          style={{
+          marginBottom: "0.5rem",
+          display: "flex",
+          justifyContent: m.sender === "You" ? "flex-end" : "flex-start"
+          }}>
+             <div
+              style={{
+              backgroundColor: m.sender === "You" ? "#2563eb" : "#e5e7eb",
+              color: m.sender === "You" ? "white" : "black",
+              padding: "0.5rem 0.75rem",
+              borderRadius: "12px",
+              maxWidth: "75%"
+             }}>
+              {m.text}
+              </div>        
           </div>
         ))}
         {loading && <div>Assistant is typing…</div>}
+        <div ref={messagesEndRef} />
       </div>
 
       <input
@@ -53,7 +81,16 @@ export default function ChatBox() {
         placeholder="Ask a question about the app..."
         style={{ width: "80%", marginRight: "0.5rem" }}
       />
-      <button onClick={handleSend}>Send</button>
+      <button onClick={handleSend}
+      style={{
+        padding: "0.5rem 0.75rem",
+      backgroundColor: "#2563eb",
+      color: "white",
+      border: "none",
+      borderRadius: "6px",
+     cursor: "pointer",
+      fontWeight: "500"
+      }}>Send</button>
     </div>
   )
 }
