@@ -70,6 +70,8 @@ It appears as a pop-up chat for easy access while practicing.
 
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
 
 
 ## 📦 Future Enhancements
@@ -84,13 +86,6 @@ It appears as a pop-up chat for easy access while practicing.
 
 
 
-## ⚙️ Notes
-
-- Users get 3 attempts per question
-
-- Feedback is only shown after all attempts are used or a correct answer
-
-- Results page shows percentage score and rationale for every question
 
 ## 👥 Contributors
 
