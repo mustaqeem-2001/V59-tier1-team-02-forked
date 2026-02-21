@@ -8,6 +8,8 @@
 
 Interview Prepper is a role-based interview practice app built with React and deployed on Vercel. The app guides users through a set of questions for a selected role, allowing up to three attempts per question and providing feedback and rationale for answers.
 
+Project Link[https://pathfinder-mauve-eta.vercel.app]
+
 
 
 ## ⚡ Features
@@ -70,6 +72,8 @@ It appears as a pop-up chat for easy access while practicing.
 
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
 
 
 ## 📦 Future Enhancements
@@ -84,13 +88,6 @@ It appears as a pop-up chat for easy access while practicing.
 
 
 
-## ⚙️ Notes
-
-- Users get 3 attempts per question
-
-- Feedback is only shown after all attempts are used or a correct answer
-
-- Results page shows percentage score and rationale for every question
 
 ## 👥 Contributors
 
