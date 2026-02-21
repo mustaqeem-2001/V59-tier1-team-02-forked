@@ -5,24 +5,6 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-white font-body p-4 text-center">
 
-      {/* Badges and Main contents Container */}
-      <div className="max-w-7xl mx-auto px-margin-inline-base py-space-lg">
-
-        {/* Repo badge / title Container */}
-        <div className="flex items-center justify-start gap-space-md mb-space-lg">
-          <a
-            href="https://github.com/chingu-voyages/V59-tier1-team-02"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-space-sm text-white no-underline"
-            aria-label="Repository on GitHub"
-            title="v59-tier1-team-02 on GitHub"
-          >
-            <i className="fa-brands fa-github Repo-badge" aria-hidden="true" />
-            <span className="ml-space-sm text-md font-semibold">v59-tier1-team-02</span>
-          </a>
-        </div>
-
 
         {/* Main content */}
         <div className="flex flex-col">
@@ -38,8 +20,9 @@ export default function Footer() {
             {/* lists container */}
             <div className="footer-list-container">
 
+              
               {/* Developers List*/}
-              <div className="developers-list">
+              <div className=" developers-list">
                 <h3>Developers</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center justify-start gap-space-sm">
@@ -145,6 +128,7 @@ export default function Footer() {
 
               {/* Scrum Master */}
               <div className="scrum-masters-list">
+              <div className="  scrum-master">
                 <h3>Scrum Master</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center justify-start gap-space-sm">
@@ -174,7 +158,7 @@ export default function Footer() {
               </div>
 
               {/* Shadow scrum master */}
-              <div className="shadow-scrum-masters-list">
+              <div className=" shadow-scrum-masters-list">
                 <h3>Shadow Scrum Master</h3>
                 <ul>
                   <li className="flex items-center justify-start gap-space-sm">
@@ -202,6 +186,22 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
+              </div>
+              {/* Repo badge / title Container */}
+              <div className="flex items-center justify-start gap-space-md mb-space-lg">
+                <a
+                  href="https://github.com/chingu-voyages/V59-tier1-team-02"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-space-sm text-white no-underline"
+                  aria-label="Repository on GitHub"
+                  title="v59-tier1-team-02 on GitHub"
+                >
+                  <i className="fa-brands fa-github Repo-badge"     aria-hidden="true" />
+                  <span className="ml-space-sm text-md  font-semibold">v59-tier1-team-02</span>
+                </a>
+              </div>
+
             </div>
           </div>
         </div>
@@ -213,7 +213,6 @@ export default function Footer() {
             <div className="text-sm text-white/90">Built by V59-tier1-team-02</div>
           </div>
         </div>
-      </div>
     </footer>
   );
 }
