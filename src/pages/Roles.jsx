@@ -9,6 +9,10 @@ export default function Roles() {
   const firstRoleRef = useRef(null);
   const toggleRef = useRef(null);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const handleRoleSelect = (id) => {
     setIsOpen(false);
     if (id) {

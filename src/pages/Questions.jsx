@@ -21,6 +21,10 @@ export default function Questions() {
     return <h1>Role not found</h1>;
   }
 
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const roleLabel = roleExists.label;
 
   const roleQuestions = questions.find(function (q) {

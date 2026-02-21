@@ -18,7 +18,7 @@ function Header() {
               <a href="/" className="hover:text-blue-400 text-center block">Home</a>
             </li>
             <li>
-              <a href="/Roles" className="hover:text-blue-400 text-center block">SCRUM Roles</a>
+              <a href="/roles" className="hover:text-blue-400 text-center block">SCRUM Roles</a>
             </li>
             <li>
               <p className="hover:text-blue-400 text-center block formmattedDate">{formattedDate}</p>

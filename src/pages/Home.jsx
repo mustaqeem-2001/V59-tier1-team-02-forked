@@ -1,5 +1,5 @@
 import CardHomepage from "../components/CardHomepage";
-import hero from "../assets/hero2.png";
+import hero from "../assets/blue_wall.jpg";
 import Button from "../components/Pri-Button";
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
     				</h4>
   				</div>
           {/* Hero Image Container */}
-					<div className="w-full flex justify-center md:w-full hero_image-container">
+					<div className="w-full flex justify-center md:w-full hero_image-container ">
             {/* Hero Image */}
 						<img
     					src={hero}
@@ -46,20 +46,20 @@ export default function Home() {
         {/* Features Card row */}
         <div className="features-cards-container flex flex-col gap-[var(--space-sm)]">
         {/* Card-1 */}
-          <CardHomepage 
+          <CardHomepage
             emoji="💪"
             title="Confidence Booster"
-            description="Practise one question at a time in a focused flashcard flow that builds comfort and interview readiness."
+            description="Build interview readiness one question at a time. Learn your knowledge gaps before the interview does."
           />
-          <CardHomepage 
+          <CardHomepage
             emoji="🎯"
-            title="Targeted Practise Questions"
-            description="Select your Scrum role and get questions tailored to your specific role."
+            title="Targeted Questions"
+            description="Prepare with purpose with interview questions tailored to your desired role."
           />
-          <CardHomepage 
+          <CardHomepage
             emoji="⚡"
             title="Instant Feedback"
-            description="Know immediately if you’re right or wrong, with clear rationale to help you improve as you go."
+            description="With up to three attempts per question, clear rationale and AI chat you'll know exactly where you stand."
           />
         </div>
 
