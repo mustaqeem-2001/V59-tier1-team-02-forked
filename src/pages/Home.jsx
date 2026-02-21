@@ -21,7 +21,7 @@ export default function Home() {
     				</h1>
     				<h4 className="mt-space-md text-[var(--h4-size)] font-semibold">
       				Level up with Chingus worldwide! 
-              practise anytime, anywhere!
+              Practise anytime, anywhere!
     				</h4>
   				</div>
           {/* Hero Image Container */}
